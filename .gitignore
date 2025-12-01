@@ -1,0 +1,10 @@
+# macOS junk
+.DS_Store
+
+# Racket backup files
+*.rkt~
+# Racket autosave
+*.bak
+
+# Emacs / Vim
+*~
