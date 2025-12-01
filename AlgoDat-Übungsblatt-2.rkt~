@@ -1,0 +1,29 @@
+#lang racket
+
+(define (nat-wurzel x)
+  (do ((sum 0 (+ sum odd))
+       (odd 1 (+ odd 2))
+       (count 0 (+ count 1)))
+((= sum x) count)))
+
+(nat-wurzel 1)
+(nat-wurzel 4)
+(nat-wurzel 9)
+(nat-wurzel 16)
+(nat-wurzel 25)
+(nat-wurzel 36)
+
+(define (zahl-umdrehen x)
+  (define (umdrehen-platz x rev)
+    (if (= x 0)
+        rev
+        (let ((letzte-zahl (remainder x 10)))
+          (umdrehen-platz (quotient x 10)
+                          (+ (* rev 10) letzte-zahl)))))
+    (umdrehen-platz x 0))
+
+(zahl-umdrehen 123)
+(zahl-umdrehen 4497821)
+(zahl-umdrehen 597050)
+(zahl-umdrehen 123456789)
+(zahl-umdrehen 678954321236)

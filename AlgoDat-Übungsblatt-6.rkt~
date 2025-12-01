@@ -1,0 +1,50 @@
+#lang racket
+
+;Aufgabe 1
+
+(define (zaehlen start ende n)
+  (define (helper current count)
+    (cond
+      [(> current ende) 0]
+      [(and (= 0 (modulo current 3))
+            (= 0 (modulo current 7)))
+       (if (= count n)
+           current
+           (helper (+ current 1) (+ count 1)))]
+      [else (helper (+ current 1) count)]))
+  (helper start 1))
+
+
+(zaehlen 10 100 1)
+(zaehlen 10 100 2)
+(zaehlen 10 100 3)
+(zaehlen 10 100 1337)
+
+;Aufgabe 2
+
+(define (gleiche-ziffern zahl)
+  (define (erste-ziffer x)
+    (if (< x 10)
+        x
+        (erste-ziffer (quotient x 10))))
+
+  (define (letzte-ziffer x)
+    (modulo x 10))
+
+  (if (= (erste-ziffer zahl) (letzte-ziffer zahl))
+      zahl
+      (gleiche-ziffern (+ zahl 1))))
+
+(gleiche-ziffern 123)
+(gleiche-ziffern 4567)
+
+;Aufgabe 3
+
+(define (konst-addierer n)
+  (lambda (a)
+    (+ a n)))
+
+(define plus1 (konst-addierer 1))
+(plus1 98)
+(define plus10 (konst-addierer 10))
+(plus10 98)

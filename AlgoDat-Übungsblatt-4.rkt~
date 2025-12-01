@@ -1,0 +1,15 @@
+#lang racket/base
+
+; odd? Prädikat, das eine Zahl darauf testet, ob sie ungerade ist
+; even ? Prädikat, das eine Zahl darauf testet, ob sie gerade ist
+; integer ? Prädikat, das eine Zahl darauf testet, ob sie ganzzahlig ist
+; sqrt Berechnet die Quadratwurzel einer Zahl
+; ceiling Die Ceiling-Funktion (Aufrundungsfunktion) liefert zu einer reellen Zahl die nächstgrößere
+; ganze Zahl. Die mathematische Schreibweise dafür ist ⌈ ⌉
+
+(define (ganzzahlige-wurzel? n)
+  (integer? (sqrt n)))
+
+(ganzzahlige-wurzel? 25)
+(ganzzahlige-wurzel? 24)
+(ganzzahlige-wurzel? 16)
