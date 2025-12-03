@@ -106,3 +106,7 @@
 
 ;Aufgabe 6
 
+(define struktur1 (cons (cons 24 (cons 1 2)) (cons 20 (cons 1 1))))
+(define struktur2 (cons (cons 7 (cons 2 (cons 3 (cons 1 '())))) '()))
+
+;rest der Aufgabe ist ähnlich aufgebaut
