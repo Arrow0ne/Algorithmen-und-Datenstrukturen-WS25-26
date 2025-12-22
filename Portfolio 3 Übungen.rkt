@@ -152,7 +152,7 @@
       (if (and (null? lis1) (null? lis2))
           ergebnis
           (cond
-            [(null? lis1) (iter lis1 (cdr lis2) (append ergebnis (list (op 0 car lis2))))]
+            [(null? lis1) (iter lis1 (cdr lis2) (append ergebnis (list (op 0 (car lis2))))]
             [(null? lis2) (iter (cdr lis1) lis2 (append ergebnis (list (op (car lis1) 0))))]
             [else
              (iter (cdr lis1) (cdr lis2) (append ergebnis (list (op (car lis1) (car lis2)))))])))
